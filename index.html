@@ -51,31 +51,36 @@
     </style> 
   </head>
   <body>
-    <div class="" id="myApp">
-        <section class="hero">
+    <div id="myApp">
+        <section class="container hero">
             <div class="hero-body">
-              <h1 class="title is-1">
-                Hey! I&rsquo;m Jigar.
-              </h1>
-              <h2 class="subtitle is-2">
-                I build things that help users have a better experience on web.
-              </h2>
-              <p>Developing software for the world of intent is something I'm passionate about and I'm dedicated to making the world of intent easy and affordable for everyone.I love working on a variety of technologies including Web Development, Mobile App Development and Deep Learning. My goal is to build highly performant applications that solve real-world problems and provide users with an awesome experience.    </p>
+                <h1 class="title is-1">
+                    Hey! I&rsquo;m Jigar.
+                  </h1>
+              
+                  <h2 class="subtitle is-2">
+                    I build things that help users have a better experience on web.
+                  </h2>
+            </div>
+        </section>
+        
+        <section class="container hero">
+            <div class="hero-body">
+              <p class="">Developing software for the world of intent is something I'm passionate about and I'm dedicated to making the world of intent easy and affordable for everyone.I love working on a variety of technologies including Web Development, Mobile App Development and Deep Learning. My goal is to build highly performant applications that solve real-world problems and provide users with an awesome experience.    </p>
             </div>
         </section>
         <section class="hero is-link">
-            <div class="hero-body">
-              <p class="title">
-                Tools and technologies
-              </p>
-              <p class="subtitle">
-                Using a combination of technologies and reliable open-source software I build user-focused, performant apps and websites.
-              </p>
-            </div>
+            <div class="container">
+                <div class="hero-body">
+                  <p class="title">
+                    Tools and technologies
+                  </p>
+                  <p class="subtitle">
+                    Using a combination of technologies and reliable open-source software I build user-focused, performant apps and websites.
+                  </p>
+                </div>
+            </div>   
         </section>
-        <span class="material-icons">eb7c</span>
-    
-    
         <section class="container">
             <div class="hero-body">
                 <div class="columns" v-for="(techSection,k) of technologies" :key="k">
@@ -99,188 +104,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="columns">
-                        <div class="column">
-                            <figure class="image is-128x128">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5">
-                              </figure>
-                        </div>
-                        <div class="column">
-                            <figure class="image is-128x128">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" title="CSS3">
-                              </figure>
-                        </div>
-                        <div class="column">
-                            <figure class="image is-128x128">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" title="Bootstrap">
-                              </figure>
-                        </div>
-                        <div class="column">
-                            <figure class="image is-128x128">
-                                <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" title="Tailwind CSS">
-                              </figure>
-                        </div>
-                        <div class="column">
-                            <figure class="image is-128x128">
-                                <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" title="Tailwind CSS">
-                              </figure>
-                        </div>
-                        
-                    </div>
-                <div class="columns">
-                    <div class="column ">
-                        <figure class="image is-128x128">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="Javascript">
-                          </figure>
-                          <h4 class="sub-title center">Javascript</h4>
-                    </div>
-                    <div class="column">
-                        <figure class="image is-128x128">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg" title="MySql">
-                          </figure>
-                    </div>
-                    <div class="column">
-                        <figure class="image is-128x128">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg" title="Git">
-                          </figure>
-                    </div>
-                    <div class="column">
-                        <figure class="image is-128x128">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" title="React js">
-                          </figure>
-                    </div>
-                    <div class="column">
-                        <figure class="image is-128x128">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" title="React js">
-                          </figure>
-                    </div>
-                </div>
+           
             </div>
         </section>
+        <section class="hero is-link">
+            <div class="container">
+                <div class="hero-body">
+                  <p class="title">
+                    Projects
+                  </p>
+                  <p class="subtitle">
+                    During my professional career journey, I have worked on Web application, Frontend & Backend Development and API Development .        
+                  </p>
+                </div>
+            </div>   
+        </section>
+        <section class="hero container">
+            <div class="hero-body">
+                <div class="columns" v-for="(projects,k) of project_data" :key="k">
+                    <div class="column" v-for="project of projects" :key="project.title">
+                      <div class="card">
+                        <div class="card-content">
+                          <div class="content">
+                            <h3 class="title is-3">
+                                <a v-if="project.url" :href="project.url" target="_blank">{{project.title}}</a>
+                                <a v-else href="#">{{project.title}}</a>
+                        </h3>
+                            <p>{{project.description}}</p>
+                           <em v-html="project.technologies"></em>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>    
         <section class="columns hero-body">
           <section class="column section">
     
-            <div class="container">
-              <h2 class="title is-2">Projects</h2>
-              <div class="columns">
-                <div class="column">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="content">
-                        <h3 class="title is-3"><a href="https://github.com/scrabill/food-or-foe-react" target="_blank">Food or Foe</a></h3>
-                        <p>A react based game to correctly guess if an emoji is or is not a food.</p>
-                        <em>React, Ruby on Rails (API), Redux</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="content">
-                        <h3 class="title is-3"><a href="http://shannoncrabill.com/oh-hex" target="_blank">Oh Hex!</a></h3>
-                        <p>Randomly generates and displays a new hex color on each click.</p>
-                        <em>Javascript, HTML, CSS</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="content">
-                        <h3 class="title is-3"><a href="https://github.com/scrabill/central-perk" target="_blank">Central Perk</a></h3>
-                        <p>A Ruby on Rails, point-of-service application for a coffee shop.</p>
-                        <em>Ruby on Rails, oAuth</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-third">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="content">
-                        <h3 class="title is-3"><a href="http://halloweenti.me/" target="_blank">Halloweenti.me</a></h3>
-                        <p>A vanilla Javascript countdown to the spookiest day of the year.</p>
-                        <em>CSS Animations, Javascript, Netlify</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-third">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="content">
-                        <h3 class="title is-3"><a href="http://www.shannoncrabill.com/focused-breathing" target="_blank">Focused Breathing</a></h3>
-                        <p>A CSS Animation to help with focused breathing exercises.</p>
-                        <em>CSS Animations, CSS Grid, @keyframes</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-third">
-                  <div class="card">
-                    <div class="card-content">
-                      <div class="content">
-                        <h3 class="title is-3"><a href="http://shannoncrabill.com/bubble-wrap" target="_blank">Bubble Wrap</a></h3>
-                        <p>Release some stress by clicking or touching to pop never-ending virtual bubbles!</p>
-                        <em>React, HTML, CSS, Netlify</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tile is-ancestor">
-                <div class="tile is-vertical is-8">
-                  <div class="tile">
-                    <div class="tile is-parent is-vertical">
-                      <article class="tile is-child notification is-primary">
-                        <p class="title">Vertical...</p>
-                        <p class="subtitle">Top tile</p>
-                      </article>
-                      <article class="tile is-child notification is-warning">
-                        <p class="title">...tiles</p>
-                        <p class="subtitle">Bottom tile</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child notification is-info">
-                        <p class="title">Middle tile</p>
-                        <p class="subtitle">With an image</p>
-                        <figure class="image is-4by3">
-                          <img src="https://bulma.io/images/placeholders/640x480.png">
-                        </figure>
-                      </article>
-                    </div>
-                  </div>
-                  <div class="tile is-parent">
-                    <article class="tile is-child notification is-danger">
-                      <p class="title">Wide tile</p>
-                      <p class="subtitle">Aligned with the right tile</p>
-                      <div class="content">
-                        <!-- Content -->
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="tile is-parent">
-                  <article class="tile is-child notification is-success">
-                    <div class="content">
-                      <p class="title">Tall tile</p>
-                      <p class="subtitle">With even more content</p>
-                      <div class="content">
-                        <!-- Content -->
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
               <footer class="footer">
               <div class="content has-text-centered">
                 <p>
-                  Jigar Prajapati &copy; 2011&ndash;<script>document.write(new Date().getFullYear())</script>
+                  Jigar Prajapati &copy; 2016&ndash;{{year}}
                 </p>
                 <p>
                   <a href="#top">Back to Top <i class="fas fa-arrow-up"></i></a>
